@@ -1,5 +1,5 @@
 {
-  "@context": "http://readium.org/webpub/default.jsonld",
+  "@context": "https://readium.org/webpub-manifest/context.jsonld",
 
   "metadata": {
     "@type": "http://schema.org/Book",
@@ -14,7 +14,7 @@
     {"rel": "start", "href": "https://poignant.guide/", "type": "text/html"}
   ],
 
-  "spine": [
+  "readingOrder": [
     {"href": "https://poignant.guide/book/chapter-1.html", "type": "text/html", "title": "1. About this Book"},
     {"href": "https://poignant.guide/book/chapter-2.html", "type": "text/html", "title": "2. Kon’nichi wa, Ruby"},
     {"href": "https://poignant.guide/book/chapter-3.html", "type": "text/html", "title": "3. A Quick (and Hopefully Painless) Ride Through Ruby (with Cartoon Foxes)"},
