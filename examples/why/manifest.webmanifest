@@ -2,14 +2,5 @@
   "name": "Why’s (Poignant) Guide to Ruby",
   "short_name": "Ruby Guide",
   "start_url": "https://poignant.guide/",
-  "display": "publication",
-  "reading_order": [
-    {"href": "https://poignant.guide/book/chapter-1.html", "type": "text/html", "title": "1. About this Book"},
-    {"href": "https://poignant.guide/book/chapter-2.html", "type": "text/html", "title": "2. Kon’nichi wa, Ruby"},
-    {"href": "https://poignant.guide/book/chapter-3.html", "type": "text/html", "title": "3. A Quick (and Hopefully Painless) Ride Through Ruby (with Cartoon Foxes)"},
-    {"href": "https://poignant.guide/book/chapter-4.html", "type": "text/html", "title": "4. Floating Little Leaves of Code"}, 
-    {"href": "https://poignant.guide/book/chapter-5.html", "type": "text/html", "title": "5. Them What Make the Rules and Them What Live the Dream"}, 
-    {"href": "https://poignant.guide/book/chapter-6.html", "type": "text/html", "title": "6. Downtown"}, 
-    {"href": "https://poignant.guide/book/chapter-7.html", "type": "text/html", "title": "7. When You Wish Upon a Beard"}
-  ]
+  "display": "standalone"
 }

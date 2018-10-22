@@ -1,0 +1,32 @@
+{
+  "@context": ["https://schema.org", "https://www.w3.org/ns/wp-context"],
+  "type": "Book",
+  "id": "https://poignant.guide/",
+  "url": "https://hadriengardeur.github.io/webpub-manifest/examples/why/",
+  "name": "Why’s (Poignant) Guide to Ruby",
+  "inLanguage": "en",
+  "author": "why the lucky stiff",
+
+  "readingOrder": [
+    {"url": "https://poignant.guide/book/chapter-1.html", "encodingFormat": "text/html", "name": "1. About this Book"},
+    {"url": "https://poignant.guide/book/chapter-2.html", "encodingFormat": "text/html", "name": "2. Kon’nichi wa, Ruby"},
+    {"url": "https://poignant.guide/book/chapter-3.html", "encodingFormat": "text/html", "name": "3. A Quick (and Hopefully Painless) Ride Through Ruby (with Cartoon Foxes)"},
+    {"url": "https://poignant.guide/book/chapter-4.html", "encodingFormat": "text/html", "name": "4. Floating Little Leaves of Code"}, 
+    {"url": "https://poignant.guide/book/chapter-5.html", "encodingFormat": "text/html", "name": "5. Them What Make the Rules and Them What Live the Dream"}, 
+    {"url": "https://poignant.guide/book/chapter-6.html", "encodingFormat": "text/html", "name": "6. Downtown"}, 
+    {"url": "https://poignant.guide/book/chapter-7.html", "encodingFormat": "text/html", "name": "7. When You Wish Upon a Beard"}
+  ],
+
+  "resources": [
+    {
+      "rel": "navigation", 
+      "url": "https://hadriengardeur.github.io/webpub-manifest/examples/why/", 
+      "encodingFormat": "text/html"
+    },
+    {
+      "rel": "contents", 
+      "url": "https://hadriengardeur.github.io/webpub-manifest/examples/why/toc.html", 
+      "encodingFormat": "text/html"
+    }
+  ]
+}
