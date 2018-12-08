@@ -115,7 +115,8 @@
 
   function cacheSpine(manifestJSON, url) {
     return manifestJSON.then(function(manifest) {
-      return manifest.spine.map(function(el) { return el.href});}).then(function(data) {
+      var spn = manifest.readingOrder || manifest.spine;
+      return spn.map(function(el) { return el.href});}).then(function(data) {
         data.push(url);
         return cacheURL(data, url);})
   };
@@ -132,9 +133,10 @@
       document.querySelector("title").textContent = title;
 
       //Search for TOC and add it
+      var spn = json.readingOrder || json.spine;
       
-      if (json.resources) { var all_resources = json.spine.concat(json.resources); }
-      else { var all_resources = json.spine; }
+      if (json.resources) { var all_resources = spn.concat(json.resources); }
+      else { var all_resources = spn; }
       all_resources.forEach(function(link) {
         if (link.rel) {
           if (link.rel=="contents") {
@@ -155,7 +157,7 @@
         }
       }, this);
       
-      return json.spine;
+      return spn;
     }).then(function(spine) {
       
       //Set start document
@@ -181,7 +183,7 @@
 
   function updateNavigation(url) {
     console.log("Getting "+url)
-    return getManifest(url).then(function(json) { return json.spine } ).then(function(spine) {
+    return getManifest(url).then(function(json) { return (json.readingOrder || json.spine) } ).then(function(spine) {
       
       var current_location = iframe.src;
 

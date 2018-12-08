@@ -103,7 +103,8 @@
 
   function cacheSpine(manifestJSON, url) {
     return manifestJSON.then(function(manifest) {
-      return manifest.spine.map(function(el) { return el.href});}).then(function(data) {
+      var spn = manifest.readingOrder || manifest.spine;
+      return spn.map(function(el) { return el.href});}).then(function(data) {
         data.push(url);
         return cacheURL(data, url);})
   };
@@ -118,7 +119,7 @@
       var title = json.metadata.title;
       console.log("Title of the comics: "+title);
       document.querySelector("title").textContent = title;
-      return json.spine;
+      return (json.readingOrder || json.spine);
     }).then(function(spine) {
       
       var start_url = new URL(spine[0].href, url).href;
@@ -136,7 +137,7 @@
 
   function updateNavigation(url) {
     console.log("Getting "+url)
-    return getManifest(url).then(function(json) { return json.spine} ).then(function(spine) {
+    return getManifest(url).then(function(json) { return (json.readingOrder || json.spine)} ).then(function(spine) {
 
       var current_index = spine.findIndex(function(element) {
         var element_url = new URL(element.href, url);

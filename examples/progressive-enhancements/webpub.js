@@ -97,7 +97,8 @@ https://github.com/HadrienGardeur/webpub-manifest/wiki/Web-Publication-JS
 
   function cacheSpine(manifestJSON, url) {
     return manifestJSON.then(function(manifest) {
-      return manifest.spine.map(function(el) { return el.href});}).then(function(data) {
+      var spn = manifest.readingOrder || manifest.spine;
+      return spn.map(function(el) { return el.href});}).then(function(data) {
         data.push(url);
         return cacheURL(data, url);})
   };
@@ -108,7 +109,7 @@ https://github.com/HadrienGardeur/webpub-manifest/wiki/Web-Publication-JS
   };
 
   function addNavigation(url) {
-    return getManifest(url).then(function(json) { return json.spine} ).then(function(spine) {
+    return getManifest(url).then(function(json) { return (json.readingOrder || json.spine)} ).then(function(spine) {
       var current_index = spine.findIndex(function(element) {
         var element_url = new URL(element.href, url);
         return element_url.href == location.href
